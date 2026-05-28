@@ -1,0 +1,362 @@
+{
+  "schema_version":2,
+  "last_updated":"2026-05-27",
+  "vertical_focus":"ai_infrastructure",
+  "description":"Coverage universe for AI infrastructure investment research. Positions are monitored for thesis-tracking and systematic alerting; this file is not a personal portfolio tracker.",
+  "positions":[
+    {
+      "ticker": "NVDA",
+      "coverage_start_date": "2026-05-27",
+      "coverage_depth": "deep",
+      "thesis_direction": "long",
+      "purpose": "watchlist",
+      "sub_sector": "ai_compute_merchant_silicon",
+      "sector_etf": "SMH",
+      "peer_basket": ["AMD", "AVGO", "MRVL", "TSM"],
+      "thesis": "NVDA is evolving from a GPU manufacturer into the foundational infrastructure layer for the AI economy. Dominance in accelerated computing, CUDA software lock-in, the networking stack via Mellanox, and hyperscaler relationships create a moat that is extremely difficult to replicate even as competition from custom ASICs and rival accelerators intensifies. The core question is no longer whether AI demand exists, but whether NVIDIA can sustain platform-level economics while expanding into inference, enterprise AI, robotics, and sovereign AI infrastructure.",
+      "thesis_metrics": {
+        "data_center_revenue_growth_yoy_min": 35,
+        "gross_margin_min": 70,
+        "operating_margin_min": 55,
+        "networking_revenue_growth_yoy_min": 25
+      },
+      "target_price": 303.96,
+      "valuation_method": "Analyst consensus price target based on DCF and peer multiples reflecting dominant position in AI infrastructure",
+      "bear_triggers": [
+        "Hyperscaler AI capex growth materially decelerates due to overbuild concerns",
+        "Custom silicon from cloud providers meaningfully reduces NVIDIA share in inference workloads",
+        "Gross margins compress below 65% from competition, export restrictions, or pricing pressure"
+      ],
+      "precedent_acquirers": [],
+      "alerts": [
+        {
+          "name": "idiosyncratic_weakness",
+          "description": "Sharp drop on heavy volume while semis sector holds up",
+          "sentiment": "bearish",
+          "logic": "AND",
+          "conditions": [
+            {"type": "price_drop_pct", "window_days": 5, "threshold": -8},
+            {"type": "volume_spike", "window_days": 5, "vs_baseline_days": 20, "multiplier": 2.0},
+            {"type": "sector_return_above", "sector_etf": "SMH", "window_days": 5, "threshold": -4}
+          ],
+          "message_template": "🔻 {ticker} idiosyncratic weakness: dropped {price_drop_pct:.1f}% over {window_days}d on {volume_multiplier:.1f}x volume while SMH held at {sector_return:.1f}%"
+        },
+        {
+          "name": "peer_lag",
+          "description": "Underperforming AI-chip peer basket over 30 days",
+          "sentiment": "bearish",
+          "logic": "AND",
+          "conditions": [
+            {"type": "peer_relative_underperformance", "window_days": 30, "threshold": -10}
+          ],
+          "message_template": "📉 {ticker} underperformed AI-chip peers by {underperformance_pct:.1f}% over {window_days}d"
+        }
+      ]
+    },
+    {
+      "ticker": "AVGO",
+      "coverage_start_date": "2026-05-27",
+      "coverage_depth": "moderate",
+      "thesis_direction": "long",
+      "purpose": "watchlist",
+      "sub_sector": "ai_compute_custom_silicon",
+      "sector_etf": "SMH",
+      "peer_basket": ["NVDA", "MRVL", "AMD", "TSM"],
+      "thesis": "PLACEHOLDER — Write 2-4 sentences on your view of AVGO. Key angles to consider: custom silicon partnerships with hyperscalers (the TPU relationship with Google), VMware integration progress and software-segment margins, AI networking via ethernet/Tomahawk switches, and the diversification vs NVDA's single-customer concentration. Why long, what's the differentiated thesis, what timeframe.",
+      "thesis_metrics": {
+        "ai_revenue_growth_yoy_min": "PLACEHOLDER — pick a threshold you'd defend; AVGO breaks out AI revenue separately",
+        "operating_margin_min": "PLACEHOLDER — pick a threshold; non-GAAP margins typically 60%+",
+        "software_revenue_growth_yoy_min": "PLACEHOLDER — VMware integration metric"
+      },
+      "target_price": "PLACEHOLDER — your intrinsic value estimate, or null if you haven't valued it yet",
+      "valuation_method": "PLACEHOLDER — e.g., 'EV/EBITDA at X on FY27 estimates' or 'Sum-of-parts: semis at Y multiple, software at Z multiple'",
+      "bear_triggers": [
+        "PLACEHOLDER — qualitative event #1 that would invalidate your thesis",
+        "PLACEHOLDER — qualitative event #2",
+        "PLACEHOLDER — qualitative event #3"
+      ],
+      "precedent_acquirers": [],
+      "alerts": [
+        {
+          "name": "idiosyncratic_weakness",
+          "description": "Sharp drop on heavy volume while semis sector holds up",
+          "sentiment": "bearish",
+          "logic": "AND",
+          "conditions": [
+            {"type": "price_drop_pct", "window_days": 5, "threshold": -8},
+            {"type": "volume_spike", "window_days": 5, "vs_baseline_days": 20, "multiplier": 2.0},
+            {"type": "sector_return_above", "sector_etf": "SMH", "window_days": 5, "threshold": -4}
+          ],
+          "message_template": "🔻 {ticker} idiosyncratic weakness: dropped {price_drop_pct:.1f}% over {window_days}d on {volume_multiplier:.1f}x volume while SMH held at {sector_return:.1f}%"
+        }
+      ]
+    },
+    {
+      "ticker": "ANET",
+      "coverage_start_date": "2026-05-27",
+      "coverage_depth": "moderate",
+      "thesis_direction": "long",
+      "purpose": "watchlist",
+      "sub_sector": "ai_networking",
+      "sector_etf": "SMH",
+      "peer_basket": ["AVGO", "CSCO", "JNPR", "MRVL"],
+      "thesis": "PLACEHOLDER — Your view on Arista. Key angles: ethernet vs Infiniband debate for AI clusters, Meta and Microsoft as major customers, software-defined networking moat, gross margin sustainability as scale grows.",
+      "thesis_metrics": {
+        "revenue_growth_yoy_min": "PLACEHOLDER — pick a threshold",
+        "gross_margin_min": "PLACEHOLDER",
+        "operating_margin_min": "PLACEHOLDER"
+      },
+      "target_price": "PLACEHOLDER — or null",
+      "valuation_method": "PLACEHOLDER",
+      "bear_triggers": [
+        "PLACEHOLDER",
+        "PLACEHOLDER",
+        "PLACEHOLDER"
+      ],
+      "precedent_acquirers": [],
+      "alerts": [
+        {
+          "name": "idiosyncratic_weakness",
+          "description": "Sharp drop on heavy volume while semis sector holds up",
+          "sentiment": "bearish",
+          "logic": "AND",
+          "conditions": [
+            {"type": "price_drop_pct", "window_days": 5, "threshold": -8},
+            {"type": "volume_spike", "window_days": 5, "vs_baseline_days": 20, "multiplier": 2.0},
+            {"type": "sector_return_above", "sector_etf": "SMH", "window_days": 5, "threshold": -4}
+          ],
+          "message_template": "🔻 {ticker} idiosyncratic weakness: dropped {price_drop_pct:.1f}% over {window_days}d on {volume_multiplier:.1f}x volume while SMH held at {sector_return:.1f}%"
+        }
+      ]
+    },
+    {
+      "ticker": "MRVL",
+      "coverage_start_date": "2026-05-27",
+      "coverage_depth": "surface",
+      "thesis_direction": "long",
+      "purpose": "watchlist",
+      "sub_sector": "ai_compute_custom_silicon",
+      "sector_etf": "SMH",
+      "peer_basket": ["AVGO", "NVDA", "AMD", "TSM"],
+      "thesis": null,
+      "thesis_metrics": {},
+      "target_price": null,
+      "valuation_method": null,
+      "bear_triggers": [],
+      "precedent_acquirers": [],
+      "alerts": [
+        {
+          "name": "idiosyncratic_weakness",
+          "description": "Sharp drop on heavy volume while semis sector holds up",
+          "sentiment": "bearish",
+          "logic": "AND",
+          "conditions": [
+            {"type": "price_drop_pct", "window_days": 5, "threshold": -8},
+            {"type": "volume_spike", "window_days": 5, "vs_baseline_days": 20, "multiplier": 2.0},
+            {"type": "sector_return_above", "sector_etf": "SMH", "window_days": 5, "threshold": -4}
+          ],
+          "message_template": "🔻 {ticker} idiosyncratic weakness: dropped {price_drop_pct:.1f}% over {window_days}d on {volume_multiplier:.1f}x volume while SMH held at {sector_return:.1f}%"
+        }
+      ]
+    },
+    {
+      "ticker": "TSM",
+      "coverage_start_date": "2026-05-27",
+      "coverage_depth": "surface",
+      "thesis_direction": "long",
+      "purpose": "watchlist",
+      "sub_sector": "ai_compute_foundry",
+      "sector_etf": "SMH",
+      "peer_basket": ["ASML", "AMAT", "LRCX", "KLAC"],
+      "thesis": null,
+      "thesis_metrics": {},
+      "target_price": null,
+      "valuation_method": null,
+      "bear_triggers": [],
+      "precedent_acquirers": [],
+      "alerts": [
+        {
+          "name": "idiosyncratic_weakness",
+          "description": "Sharp drop on heavy volume while semis sector holds up",
+          "sentiment": "bearish",
+          "logic": "AND",
+          "conditions": [
+            {"type": "price_drop_pct", "window_days": 5, "threshold": -8},
+            {"type": "volume_spike", "window_days": 5, "vs_baseline_days": 20, "multiplier": 2.0},
+            {"type": "sector_return_above", "sector_etf": "SMH", "window_days": 5, "threshold": -4}
+          ],
+          "message_template": "🔻 {ticker} idiosyncratic weakness: dropped {price_drop_pct:.1f}% over {window_days}d on {volume_multiplier:.1f}x volume while SMH held at {sector_return:.1f}%"
+        }
+      ]
+    },
+    {
+      "ticker": "SNOW",
+      "coverage_start_date": "2026-05-27",
+      "coverage_depth": "surface",
+      "thesis_direction": "neutral_monitor",
+      "purpose": "watchlist",
+      "sub_sector": "ai_data_infrastructure",
+      "sector_etf": "IGV",
+      "peer_basket": ["MDB", "DDOG", "ESTC", "DBX"],
+      "thesis": null,
+      "thesis_metrics": {},
+      "target_price": null,
+      "valuation_method": null,
+      "bear_triggers": [],
+      "precedent_acquirers": ["MSFT", "ORCL", "CRM", "GOOGL"],
+      "alerts": [
+        {
+          "name": "idiosyncratic_weakness",
+          "description": "Sharp drop on heavy volume while software sector holds up",
+          "sentiment": "bearish",
+          "logic": "AND",
+          "conditions": [
+            {"type": "price_drop_pct", "window_days": 5, "threshold": -8},
+            {"type": "volume_spike", "window_days": 5, "vs_baseline_days": 20, "multiplier": 2.0},
+            {"type": "sector_return_above", "sector_etf": "IGV", "window_days": 5, "threshold": -4}
+          ],
+          "message_template": "🔻 {ticker} idiosyncratic weakness: dropped {price_drop_pct:.1f}% over {window_days}d on {volume_multiplier:.1f}x volume while IGV held at {sector_return:.1f}%"
+        }
+      ]
+    },
+    {
+      "ticker": "PLTR",
+      "coverage_start_date": "2026-05-27",
+      "coverage_depth": "surface",
+      "thesis_direction": "neutral_monitor",
+      "purpose": "watchlist",
+      "sub_sector": "ai_enterprise_applications",
+      "sector_etf": "IGV",
+      "peer_basket": ["NOW", "CRM", "AI", "DDOG"],
+      "thesis": null,
+      "thesis_metrics": {},
+      "target_price": null,
+      "valuation_method": null,
+      "bear_triggers": [],
+      "precedent_acquirers": [],
+      "alerts": [
+        {
+          "name": "idiosyncratic_weakness",
+          "description": "Sharp drop on heavy volume while software sector holds up",
+          "sentiment": "bearish",
+          "logic": "AND",
+          "conditions": [
+            {"type": "price_drop_pct", "window_days": 5, "threshold": -8},
+            {"type": "volume_spike", "window_days": 5, "vs_baseline_days": 20, "multiplier": 2.0},
+            {"type": "sector_return_above", "sector_etf": "IGV", "window_days": 5, "threshold": -4}
+          ],
+          "message_template": "🔻 {ticker} idiosyncratic weakness: dropped {price_drop_pct:.1f}% over {window_days}d on {volume_multiplier:.1f}x volume while IGV held at {sector_return:.1f}%"
+        }
+      ]
+    },
+    {
+      "ticker": "VRT",
+      "coverage_start_date": "2026-05-27",
+      "coverage_depth": "surface",
+      "thesis_direction": "long",
+      "purpose": "watchlist",
+      "sub_sector": "ai_data_center_infrastructure",
+      "sector_etf": "XLI",
+      "peer_basket": ["ETN", "PWR", "JCI", "EMR"],
+      "thesis": null,
+      "thesis_metrics": {},
+      "target_price": null,
+      "valuation_method": null,
+      "bear_triggers": [],
+      "precedent_acquirers": [],
+      "alerts": [
+        {
+          "name": "idiosyncratic_weakness",
+          "description": "Sharp drop on heavy volume while industrials sector holds up",
+          "sentiment": "bearish",
+          "logic": "AND",
+          "conditions": [
+            {"type": "price_drop_pct", "window_days": 5, "threshold": -8},
+            {"type": "volume_spike", "window_days": 5, "vs_baseline_days": 20, "multiplier": 2.0},
+            {"type": "sector_return_above", "sector_etf": "XLI", "window_days": 5, "threshold": -4}
+          ],
+          "message_template": "🔻 {ticker} idiosyncratic weakness: dropped {price_drop_pct:.1f}% over {window_days}d on {volume_multiplier:.1f}x volume while XLI held at {sector_return:.1f}%"
+        }
+      ]
+    },
+    {
+      "ticker": "DLR",
+      "coverage_start_date": "2026-05-27",
+      "coverage_depth": "surface",
+      "thesis_direction": "long",
+      "purpose": "watchlist",
+      "sub_sector": "ai_data_center_reit",
+      "sector_etf": "VNQ",
+      "peer_basket": ["EQIX", "AMT", "CCI", "IRM"],
+      "thesis": null,
+      "thesis_metrics": {},
+      "target_price": null,
+      "valuation_method": null,
+      "bear_triggers": [],
+      "precedent_acquirers": [],
+      "alerts": [
+        {
+          "name": "idiosyncratic_weakness",
+          "description": "Sharp drop on heavy volume while REITs sector holds up",
+          "sentiment": "bearish",
+          "logic": "AND",
+          "conditions": [
+            {"type": "price_drop_pct", "window_days": 5, "threshold": -8},
+            {"type": "volume_spike", "window_days": 5, "vs_baseline_days": 20, "multiplier": 2.0},
+            {"type": "sector_return_above", "sector_etf": "VNQ", "window_days": 5, "threshold": -4}
+          ],
+          "message_template": "🔻 {ticker} idiosyncratic weakness: dropped {price_drop_pct:.1f}% over {window_days}d on {volume_multiplier:.1f}x volume while VNQ held at {sector_return:.1f}%"
+        }
+      ]
+    },
+    {
+      "ticker": "CRWV",
+      "coverage_start_date": "2026-05-27",
+      "coverage_depth": "moderate",
+      "thesis_direction": "short",
+      "purpose": "watchlist",
+      "sub_sector": "ai_neocloud",
+      "sector_etf": "IGV",
+      "peer_basket": ["NBIS", "ORCL", "MSFT", "GOOGL"],
+      "thesis": "PLACEHOLDER — This is a short-bias monitor position. Write your skeptical view: the neocloud thesis depends on persistent hyperscaler GPU shortages, but those shortages should compress as hyperscaler capex catches up. CRWV's debt load, single-customer concentration (Microsoft), and asset-heavy model create risks if utilization rates fall. Consider what would actually break the thesis (e.g., MSFT contract loss, GPU oversupply, debt covenant breach).",
+      "thesis_metrics": {
+        "revenue_growth_yoy_max_before_concern": "PLACEHOLDER — for a short, you might watch for growth deceleration rather than min",
+        "customer_concentration_max": "PLACEHOLDER",
+        "debt_to_equity_max": "PLACEHOLDER"
+      },
+      "target_price": null,
+      "valuation_method": "PLACEHOLDER — short thesis valuation framework, e.g., downside case based on utilization assumptions",
+      "bear_triggers": [
+        "PLACEHOLDER — for a SHORT position, these are 'thesis confirmation' triggers: events that confirm the bearish case",
+        "PLACEHOLDER",
+        "PLACEHOLDER"
+      ],
+      "precedent_acquirers": [],
+      "alerts": [
+        {
+          "name": "idiosyncratic_weakness",
+          "description": "Sharp drop on heavy volume — confirms short thesis",
+          "sentiment": "bullish",
+          "logic": "AND",
+          "conditions": [
+            {"type": "price_drop_pct", "window_days": 5, "threshold": -10},
+            {"type": "volume_spike", "window_days": 5, "vs_baseline_days": 20, "multiplier": 2.5},
+            {"type": "sector_return_above", "sector_etf": "IGV", "window_days": 5, "threshold": -5}
+          ],
+          "message_template": "✅ {ticker} short thesis confirmation: dropped {price_drop_pct:.1f}% over {window_days}d on {volume_multiplier:.1f}x volume while IGV held at {sector_return:.1f}%"
+        },
+        {
+          "name": "thesis_break_strength",
+          "description": "Surprise strength against expectations — short thesis at risk",
+          "sentiment": "bearish",
+          "logic": "AND",
+          "conditions": [
+            {"type": "price_gain_pct", "window_days": 5, "threshold": 15},
+            {"type": "volume_spike", "window_days": 5, "vs_baseline_days": 20, "multiplier": 2.5}
+          ],
+          "message_template": "⚠️ {ticker} short thesis at risk: rallied {price_gain_pct:.1f}% over {window_days}d on {volume_multiplier:.1f}x volume — reassess thesis"
+        }
+      ]
+    }
+  ]
+}
